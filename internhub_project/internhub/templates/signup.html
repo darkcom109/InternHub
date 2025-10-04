@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    .background-color-styling {
+        background-color: #212529;
+    }
+    .signup-container-styling {
+        border: 1px solid #ddd;
+        background-color: white;
+        border-radius: 20px;
+        padding: 60px 40px;
+        max-width: 500px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        margin-block: 25px;
+    }
+    .signup-button-styling {
+        border: none;
+        border-radius: 5px;
+        background-color: #212529;
+        color: white; 
+        padding: 10px 25px;
+        transition: 0.3s;
+    }
+    .signup-button-styling:hover {
+        background-color: #333;
+    }
+    label {
+        font-weight: 500;
+    }
+    input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .errorlist {
+        color: red;
+        list-style: none;
+        padding-left: 0;
+        font-size: 0.9rem;
+    }
+</style>
+
+<div class="background-color-styling">
+    <div class="d-flex flex-column align-items-center">
+        <div class="signup-container-styling">
+            <h2 class="text-center fw-bold mb-4">Sign Up</h2>
+            
+            <form method="post" class="d-flex flex-column gap-3">
+                {% csrf_token %}
+                
+                <div>
+                    {{ form.username.label_tag }}
+                    {{ form.username }}
+                    {{ form.username.errors }}
+                </div>
+
+                <div>
+                    {{ form.email.label_tag }}
+                    {{ form.email }}
+                    {{ form.email.errors }}
+                </div>
+
+                <div>
+                    {{ form.password.label_tag }}
+                    {{ form.password }}
+                    {{ form.password.errors }}
+                </div>
+
+                <div class="d-flex justify-content-center mt-3">
+                    <button type="submit" class="signup-button-styling">Create Account</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
