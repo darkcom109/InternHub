@@ -35,13 +35,13 @@
 
                     <ul class="text-center list-unstyled mb-0">
                         {% for field in form %}
-                        {% if field.errors %}
-                            {% for error in field.errors %}
-                            <li class="text-danger">
-                                <strong>{{ field.label }}:</strong> {{ error }}
-                            </li>
-                            {% endfor %}
-                        {% endif %}
+                            {% if field.errors %}
+                                {% for error in field.errors %}
+                                <li class="text-danger">
+                                    <strong>{{ field.label }}:</strong> {{ error }}
+                                </li>
+                                {% endfor %}
+                            {% endif %}
                         {% endfor %}
 
                         {% for error in form.non_field_errors %}

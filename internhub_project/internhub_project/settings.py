@@ -133,5 +133,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Redirects for login-required pages
+
+# If the user is not logged in through '@login_required', redirect to login
 LOGIN_URL = 'login'
+# If they are already logged in, redirect to the dashboard
 LOGIN_REDIRECT_URL = 'dashboard'
