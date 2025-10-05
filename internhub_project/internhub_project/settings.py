@@ -50,6 +50,16 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.DEBUG: 'secondary',
+    messages.INFO: 'info',
+    messages.SUCCESS: 'success',
+    messages.WARNING: 'warning',
+    messages.ERROR: 'danger',  # <-- key line for red alerts
+}
+
 ROOT_URLCONF = 'internhub_project.urls'
 
 TEMPLATES = [
@@ -121,3 +131,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Redirects for login-required pages
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'dashboard'
