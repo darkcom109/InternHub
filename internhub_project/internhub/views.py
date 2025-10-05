@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import authenticate, login as auth_login, logout
 from django.contrib.auth.decorators import login_required
-from .forms import SignupForm, LoginForm
+from .forms import SignupForm, LoginForm, JobForm
+from .models import Job
 
 # Create your views here.
 # Every view requires a request object for processing
@@ -82,4 +83,57 @@ def logout_view(request):
 # The dashboard is responsible for displaying all the data once the user is logged in
 @login_required
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    # Query only the current user
+    user_jobs = Job.objects.filter(user=request.user).order_by('-created_at')
+    # Optionally add some quick stats
+    stats = {
+        'total': user_jobs.count(),
+        'applied': user_jobs.filter(status='applied').count(),
+        'interview': user_jobs.filter(status='interview').count(),
+        'offer': user_jobs.filter(status='offer').count(),
+    }
+
+    context = {
+        'jobs': user_jobs,
+        'stats': stats,
+    }
+    return render(request, 'dashboard.html', context)
+
+def add_job(request):
+    if request.method == "POST":
+        form = JobForm(request.POST)
+        if form.is_valid():
+            job = form.save(commit=False)
+            job.user = request.user
+            job.save()
+            return redirect('dashboard')
+    else:
+        form = JobForm()
+    return render(request, 'add_job.html', {'form': form})
+
+
+def edit_job(request, job_id):
+    # Find the job owned by the logged-in user
+    job = get_object_or_404(Job, id=job_id, user=request.user)
+    form = JobForm(instance=job)
+    print(job.company)
+
+    if request.method == 'POST':
+        form = JobForm(request.POST, instance=job)
+        if form.is_valid():
+            form.save()
+            return redirect('dashboard')  # Redirect after successful update
+    
+    else:
+        # Only create a new instance form for GET requests
+        form = JobForm(instance=job)
+
+    return render(request, 'edit_job.html', {'form': form, 'job': job})
+
+def delete_job(request, job_id):
+    job = get_object_or_404(Job, id=job_id, user=request.user)
+
+    if request.method == "POST":
+        job.delete()
+    
+    return redirect('dashboard')

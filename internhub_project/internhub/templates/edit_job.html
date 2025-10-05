@@ -1,0 +1,39 @@
+{% extends 'base_templates/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="background-color-styling py-5">
+  <div class="container d-flex justify-content-center align-items-center">
+    <div class="add-job-container-styling shadow-sm">
+      <h2 class="fw-semibold mb-4 text-center">Edit Job</h2>
+      <form method="POST" class="add-job-form-styling">
+        {% csrf_token %}
+        
+        <div class="mb-3">
+          {{ form.company.label_tag }}
+          {{ form.company }}
+        </div>
+
+        <div class="mb-3">
+          {{ form.position.label_tag }}
+          {{ form.position }}
+        </div>
+
+        <div class="mb-3">
+          {{ form.status.label_tag }}
+          {{ form.status }}
+        </div>
+
+        <div class="mb-4">
+          {{ form.deadline.label_tag }}
+          {{ form.deadline }}
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-dark px-4">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+.add-job-container-styling {
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 20px;
+  padding: 2rem 3rem;
+  max-width: 600px;
+  width: 100%;
+}
+
+.add-job-form-styling label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.add-job-form-styling input,
+.add-job-form-styling select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.add-job-form-styling input:focus,
+.add-job-form-styling select:focus {
+  border-color: #4F46E5;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+.add-job-form-styling button {
+  border-radius: 10px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  transition: transform 0.15s ease;
+}
+
+.add-job-form-styling button:hover {
+  transform: translateY(-2px);
+}

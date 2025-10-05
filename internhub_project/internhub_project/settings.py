@@ -138,3 +138,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = 'login'
 # If they are already logged in, redirect to the dashboard
 LOGIN_REDIRECT_URL = 'dashboard'
+

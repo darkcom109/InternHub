@@ -2,6 +2,29 @@
 {% load static %}
 
 {% block content %}
+<style>
+    .applied-styling {
+        background-color: #E0E7FF;
+        color: #3730A3;
+    }
+    .interview-styling {
+        background-color: #FEF9C3;
+        color: #854D0E;
+    }
+    .offer-styling {
+        background-color: #DCFCE7;
+        color: #166534;
+    }
+    .rejected-styling {
+        background-color: #FEE2E2;
+        color: #991B1B;
+    }
+    .saved-styling {
+        background-color: #E5E7EB;
+        color: #374151;
+    }
+</style>
+
 <div class="container py-4">
 
     <!-- Welcome Header -->
@@ -17,19 +40,19 @@
         <div class="col">
         <div class="card h-100 bg-dark text-white border-0 shadow-sm p-3 rounded-3">
             <h5 class="fw-semibold mb-1"><i class="bi bi-envelope-paper"></i> Applications Sent</h5>
-            <h2 class="fw-bold">{{ applications_sent|default:"0" }}</h2>
+            <h2 class="fw-bold">{{ stats.total | default:"0" }}</h2>
         </div>
         </div>
         <div class="col">
         <div class="card h-100 bg-dark text-white border-0 shadow-sm p-3 rounded-3">
             <h5 class="fw-semibold mb-1"><i class="bi bi-calendar-check"></i> Interviews Scheduled</h5>
-            <h2 class="fw-bold">{{ interviews_scheduled|default:"0" }}</h2>
+            <h2 class="fw-bold">{{ stats.interview | default:"0" }}</h2>
         </div>
         </div>
         <div class="col">
         <div class="card h-100 bg-dark text-white border-0 shadow-sm p-3 rounded-3">
             <h5 class="fw-semibold mb-1"><i class="bi bi-trophy"></i> Offers Received</h5>
-            <h2 class="fw-bold">{{ offers_received|default:"0" }}</h2>
+            <h2 class="fw-bold">{{ stats.offer | default:"0" }}</h2>
         </div>
         </div>
     </div>
@@ -39,57 +62,65 @@
         <div class="card-body">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h4 class="fw-semibold mb-0">My Applications</h4>
-            <a href="#" class="btn btn-dark"><i class="bi bi-plus-circle"></i> Add New</a>
+            <a href="{% url 'add_job' %}" class="btn btn-dark"><i class="bi bi-plus-circle"></i> Add New</a>
         </div>
+                {% if jobs %}
+                    <div class="table-responsive">
+                    <table class="table align-middle">
+                    <thead class="table-light">
+                        <tr>
+                        <th>Company</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Deadline</th>
+                        <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for job in jobs %}
+                        <tr>
+                            <td>{{ job.company }}</td>
+                            <td>{{ job.position }}</td>
 
-        <div class="table-responsive">
-            <table class="table align-middle">
-            <thead class="table-light">
-                <tr>
-                <th>Company</th>
-                <th>Role</th>
-                <th>Status</th>
-                <th>Deadline</th>
-                <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Example placeholder data -->
-                <!--
-                <tr>
-                <td>Google</td>
-                <td>Software Intern</td>
-                <td><span class="badge bg-warning text-dark">In Review</span></td>
-                <td>Oct 12, 2025</td>
-                <td>
-                    <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i></button>
-                    <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
-                </td>
-                </tr>
-                <tr>
-                <td>Microsoft</td>
-                <td>Data Analyst Intern</td>
-                <td><span class="badge bg-success">Interview</span></td>
-                <td>Oct 20, 2025</td>
-                <td>
-                    <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i></button>
-                    <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
-                </td>
-                </tr>
-                <tr>
-                <td>Amazon</td>
-                <td>Product Management Intern</td>
-                <td><span class="badge bg-secondary">Submitted</span></td>
-                <td>Oct 8, 2025</td>
-                <td>
-                    <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i></button>
-                    <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
-                </td>
-                </tr>
-                -->
-            </tbody>
-            </table>
-        </div>
+                            {% if job.status == "applied" %}
+                                <td><span class="badge applied-styling">{{ job.status | title }}</span></td>
+                            {% elif job.status == "interview" %}
+                                <td><span class="badge interview-styling">{{ job.status | title }}</span></td>
+                            {% elif job.status == "offer" %}
+                                <td><span class="badge offer-styling">{{ job.status | title }}</span></td>
+                            {% elif job.status == "rejected" %}
+                                <td><span class="badge rejected-styling">{{ job.status | title }}</span></td>
+                            {% elif job.status == "saved" %}
+                                <td><span class="badge saved-styling">{{ job.status | title }}</span></td>
+                            {% endif %}
+                            
+                            <td>{{ job.deadline }}</td>
+                            <td>
+                                <form action="{% url 'edit_job' job.id %}" style="display:inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-sm btn-outline-secondary">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                </form>
+                                <form method="POST" action="{% url 'delete_job' job.id %}" style="display:inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-sm btn-outline-danger">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    </table>
+                    </div>
+                {% else %}
+                    <div class="d-flex justify-content-center p-5">
+                        <p class="text-secondary mb-0">You haven’t added any jobs yet. 
+                            <a class="text-decoration-none" href="{% url 'add_job' %}">Add one now.</a>
+                        </p>
+                    </div>
+                {% endif %}
         </div>
     </div>
 

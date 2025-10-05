@@ -24,5 +24,8 @@ urlpatterns = [
     path('signup/', views.signup, name="signup"),
     path('login/', views.login, name="login"),
     path('logout/', views.logout_view, name="logout_view"),
-    path('dashboard/', views.dashboard, name="dashboard")
+    path('dashboard/', views.dashboard, name="dashboard"),
+    path('add_job', views.add_job, name="add_job"),
+    path('delete-job/<int:job_id>', views.delete_job, name="delete_job"),
+    path('edit-job/<int:job_id>', views.edit_job, name="edit_job"),
 ]
