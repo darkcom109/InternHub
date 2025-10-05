@@ -1,46 +1,5 @@
-{% extends 'base_templates/base_welcome.html' %}
+{% extends 'base_templates/base.html' %}
 {% block content %}
-<style>
-    .background-color-styling {
-        background-color: #212529;
-    }
-    .signup-container-styling {
-        border: 1px solid #ddd;
-        background-color: white;
-        border-radius: 20px;
-        padding: 60px 40px;
-        max-width: 500px;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        margin-block: 25px;
-    }
-    .signup-button-styling {
-        border: none;
-        border-radius: 5px;
-        background-color: #212529;
-        color: white; 
-        padding: 10px 25px;
-        transition: 0.3s;
-    }
-    .signup-button-styling:hover {
-        background-color: #333;
-    }
-    label {
-        font-weight: 500;
-    }
-    input {
-        width: 100%;
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
-    .errorlist {
-        color: red;
-        list-style: none;
-        padding-left: 0;
-        font-size: 0.9rem;
-    }
-</style>
-
 <div class="background-color-styling">
     <div class="d-flex flex-column align-items-center">
         <div class="signup-container-styling">

@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
     <style>
         ::-webkit-scrollbar {
             display: none;
@@ -18,52 +19,11 @@
         body {
             font-family: 'Inter';
         }
-        .bg-custom {
-            background: linear-gradient(135deg, #4F46E5 0%, #4338CA 100%);
-        }
-        .nav-button-style {
-            text-decoration: none;
-            color: black;
-            padding: 6px 12px;
-        }
-        .nav-button-style:hover {
-            color: white;
-            background-color: black;
-        }
-        #get-started, #demo {
-            color: white;
-            border: 1px solid white;
-        }
-        #get-started:hover, #demo:hover {
-            color: black;
-            border: 1px solid black;
-            background-color: white;
-        }
-        #interview_image {
-            transition: transform 0.5s ease;
-        }
-        #interview_image:hover {
-            transform: translateY(-3px);
-            cursor: pointer;
-        }
-        .icon-styling {
-            font-size: 100px;
-            margin-block: 20px;
-        }
-        .card-animation {
-            transition: transform 0.2s ease;
-        }
-        .card-animation:hover {
-            transform: translateY(-3px)
-        }
-        .cta-styling {
-            border-radius: 20px;
-        }
     </style>
   </head>
   <body>
     <!-- Navbar -->
-    {% include 'components/navbar_welcome.html' %}
+    {% include 'components/navbar.html' %}
 
     {% block content %}
 
