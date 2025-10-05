@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login as auth_login, logout
 from django.contrib.auth.decorators import login_required
 from .forms import SignupForm, LoginForm, JobForm
 from .models import Job
+from django.contrib.auth.models import User
 
 # Create your views here.
 # Every view requires a request object for processing
