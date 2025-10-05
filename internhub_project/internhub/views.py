@@ -99,6 +99,11 @@ def dashboard(request):
     }
     return render(request, 'dashboard.html', context)
 
+# The add_job view is responsible for adding a job to the dashboard
+# If the form is posted, it fills out the JobForm instance with the data
+# If the data is valid, it saves it to the database (adds current user to the job beforehand)
+# If the request is GET, it shows an empty form
+@login_required
 def add_job(request):
     if request.method == "POST":
         form = JobForm(request.POST)
@@ -111,7 +116,10 @@ def add_job(request):
         form = JobForm()
     return render(request, 'add_job.html', {'form': form})
 
-
+# The edit_job view is responsible for editing a specific job according to the job_id
+# It finds the job object using the job_id and according to the current user for security purpose
+# instance=job essentially fills out the form with the job data so the user can view the data they already wrote
+@login_required
 def edit_job(request, job_id):
     # Find the job owned by the logged-in user
     job = get_object_or_404(Job, id=job_id, user=request.user)
@@ -130,6 +138,10 @@ def edit_job(request, job_id):
 
     return render(request, 'edit_job.html', {'form': form, 'job': job})
 
+# The delete_job is responsible for deleting posts
+# If a user deletes a post, the job_id is passed into the view
+# This post is then found in the database and deleted using .delete()
+@login_required
 def delete_job(request, job_id):
     job = get_object_or_404(Job, id=job_id, user=request.user)
 
