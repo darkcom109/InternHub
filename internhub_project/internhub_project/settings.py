@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -85,8 +89,12 @@ WSGI_APPLICATION = 'internhub_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'myproject_db',  # the name you just created
+        'USER': 'postgres',
+        'PASSWORD': os.getenv('DB_PASSWORD'),  # your PostgreSQL password
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
