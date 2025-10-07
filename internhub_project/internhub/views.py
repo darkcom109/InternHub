@@ -150,3 +150,7 @@ def delete_job(request, job_id):
         job.delete()
     
     return redirect('dashboard')
+
+@login_required
+def internships(request):
+    return render(request, 'internships.html')

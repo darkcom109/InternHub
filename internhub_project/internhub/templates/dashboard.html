@@ -23,6 +23,11 @@
         background-color: #E5E7EB;
         color: #374151;
     }
+    .container-table-styling {
+        border: 1.5px solid #ccc;
+        border-radius: 10px;
+        overflow: hidden; /* hides the sharp table edges inside */
+    }
 </style>
 
 <div class="container py-4">
@@ -58,16 +63,16 @@
     </div>
 
     <!-- Application Tracker Table -->
-    <div class="card shadow-sm border-0 rounded-3">
+    <div class="card shadow-sm" :class="dark ? 'text-white bg-dark' : 'text-black bg-white'">
         <div class="card-body">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h4 class="fw-semibold mb-0">My Applications</h4>
             <a href="{% url 'add_job' %}" class="btn btn-dark"><i class="bi bi-plus-circle"></i> Add New</a>
         </div>
                 {% if jobs %}
-                    <div class="table-responsive">
+                    <div class="table-responsive container-table-styling p-2" :class="dark ? 'bg-dark' : 'bg-light'">
                     <table class="table align-middle">
-                    <thead class="table-light">
+                    <thead :class="dark ? 'table-dark' : 'table-light'">
                         <tr>
                         <th>Company</th>
                         <th>Role</th>
@@ -76,7 +81,7 @@
                         <th>Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody :class="dark ? 'table-dark' : 'table-light'">
                     {% for job in jobs %}
                         <tr>
                             <td>{{ job.company }}</td>

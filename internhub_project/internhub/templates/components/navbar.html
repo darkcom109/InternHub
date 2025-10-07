@@ -21,6 +21,7 @@
               <li class="nav-item"><a class="btn nav-button-style" :class="dark ? 'nav-button-style-dark' : 'nav-button-style'" href="{% url 'login' %}">Login</a></li>
               <li class="nav-item"><a class="btn nav-button-style" :class="dark ? 'nav-button-style-dark' : 'nav-button-style'" href="{% url 'signup' %}">Get started</a></li>
             {% else %}
+            <li class="nav-item"><a class="btn nav-button-style" :class="dark ? 'nav-button-style-dark' : 'nav-button-style'" href="{% url 'internships' %}">Internships</a></li>
               <li class="nav-item"><a class="btn nav-button-style" :class="dark ? 'nav-button-style-dark' : 'nav-button-style'" href="{% url 'dashboard' %}">Dashboard</a></li>
               <li class="nav-item"><a class="btn nav-button-style" :class="dark ? 'nav-button-style-dark' : 'nav-button-style'" href="{% url 'logout_view' %}">Logout</a></li>
             {% endif %}
