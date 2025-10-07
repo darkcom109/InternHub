@@ -41,18 +41,22 @@ It replaces messy spreadsheets and scattered notes with an organized digital sol
 
 Clone the Repository and Install Dependencies
 ```bash
+# Clone the repository
 git clone https://github.com/darkcom109/InternHub.git
 cd internhub
+# Install requirements
 pip install -r requirements.txt
 ```
 
 Setup Environment Variables
 ```bash
+# Setup password for your postgresql database and settings.py secret key
 DB_PASSWORD=
 SECRET_KEY=
 ```
 
 Run Django Server
 ```bash
+# Run your Django server
 python manage.py runserver
 ```
