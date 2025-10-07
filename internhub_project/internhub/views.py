@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login as auth_login, logout
 from django.contrib.auth.decorators import login_required
 from .forms import SignupForm, LoginForm, JobForm
-from .models import Job
+from .models import Job, Internship
 from django.contrib.auth.models import User
 
 # Create your views here.
@@ -153,4 +153,5 @@ def delete_job(request, job_id):
 
 @login_required
 def internships(request):
-    return render(request, 'internships.html')
+    internships = Internship.objects.all()
+    return render(request, 'internships.html', {'internships': internships})

@@ -19,38 +19,16 @@
                 </tr>
             </thead>
             <tbody :class="dark ? 'table-dark' : 'table-light'">
-                <tr>
-                    <td>Bristol Tracker - Tech</td>
-                    <td>Software Engineer, IT</td>
-                    <td><a target="_blank" 
-                           href="https://app.the-trackr.com/uk-technology/summer-internships"
-                           class="text-decoration-none"
-                        >https://app.the-trackr.com/uk-technology/summer-internships</a></td>
-                </tr>
-                <tr>
-                    <td>Bristol Tracker - Finance</td>
-                    <td>Finance, Banking</td>
-                    <td><a target="_blank" 
-                           href="https://app.the-trackr.com/uk-finance/summer-internships"
-                           class="text-decoration-none"
-                        >https://app.the-trackr.com/uk-finance/summer-internships</a></td>
-                </tr>
-                <tr>
-                    <td>Bristol Tracker - Law</td>
-                    <td>Law</td>
-                    <td><a target="_blank" 
-                           href="https://app.the-trackr.com/uk-law/summer-internships"
-                           class="text-decoration-none"
-                        >https://app.the-trackr.com/uk-law/summer-internships</a></td>
-                </tr>
-                <tr>
-                    <td>Bristol Tracker - North America Application</td>
-                    <td>NA Finance</td>
-                    <td><a target="_blank" 
-                           href="https://app.the-trackr.com/na-finance-2027/summer-internships"
-                           class="text-decoration-none"
-                        >https://app.the-trackr.com/na-finance-2027/summer-internships</a></td>
-                </tr>
+                {% for internship in internships %}
+                    <tr>
+                        <td>{{ internship.website}}</td>
+                        <td>{{ internship.related_roles }}</td>
+                        <td><a target="_blank"
+                            href="{{ internship.link }}"
+                            class="text-decoration-none"
+                            >{{ internship.link }}</a></td>
+                    </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>
