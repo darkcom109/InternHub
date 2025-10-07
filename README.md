@@ -16,7 +16,8 @@ It serves as a personal tracker — allowing users to add, view, and manage inte
   - Add internship applications with details like company name, position, status, and deadline  
   - View, update, or delete applications directly from your dashboard  
   - See key statistics — total applications sent, interviews, and offers received
-  - Light/Dark mode feature using Alpine.js
+  - View websites for internships directly on the internship page
+  - Light/dark mode feature using Alpine.js
 
 ---
 
@@ -35,3 +36,27 @@ InternHub provides students with a simple, intuitive dashboard to manage the ent
 It replaces messy spreadsheets and scattered notes with an organized digital solution powered by Django.
 
 ---
+
+## 📊 Installation
+
+Clone the Repository and Install Dependencies
+```bash
+# Clone the repository
+git clone https://github.com/darkcom109/InternHub.git
+cd internhub
+# Install requirements
+pip install -r requirements.txt
+```
+
+Setup Environment Variables
+```bash
+# Setup password for your postgresql database and settings.py secret key
+DB_PASSWORD=
+SECRET_KEY=
+```
+
+Run Django Server
+```bash
+# Run your Django server
+python manage.py runserver
+```
