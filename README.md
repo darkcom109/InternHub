@@ -39,9 +39,20 @@ It replaces messy spreadsheets and scattered notes with an organized digital sol
 
 ## 📊 Installation
 
+# Clone the Repository and Install Dependencies
 ```bash
 git clone https://github.com/darkcom109/InternHub.git
 cd internhub
 pip install -r requirements.txt
+```
+
+# Setup Environment Variables
+```bash
+DB_PASSWORD=
+SECRET_KEY=
+```
+
+# Run Django Server
+```bash
 python manage.py runserver
 ```
