@@ -38,21 +38,21 @@
     <!-- Stats Section -->
     <div class="row row-cols-1 row-cols-md-3 g-3 mb-4">
         <div class="col">
-        <div class="card h-100 bg-dark text-white border-0 shadow-sm p-3 rounded-3">
-            <h5 class="fw-semibold mb-1"><i class="bi bi-envelope-paper"></i> Applications Sent</h5>
-            <h2 class="fw-bold">{{ stats.total | default:"0" }}</h2>
+        <div class="card h-100 bg-dark text-white border-0 shadow-sm p-3 rounded-3" :class="dark ? 'text-black bg-white' : 'text-white bg-dark'">
+            <h5 class="fw-semibold mb-1" :class="dark ? 'text-black' : 'text-white'"><i class="bi bi-envelope-paper"></i> Applications Sent</h5>
+            <h2 class="fw-bold" :class="dark ? 'text-black' : 'text-white'">{{ stats.total | default:"0" }}</h2>
         </div>
         </div>
         <div class="col">
-        <div class="card h-100 bg-dark text-white border-0 shadow-sm p-3 rounded-3">
-            <h5 class="fw-semibold mb-1"><i class="bi bi-calendar-check"></i> Interviews Scheduled</h5>
-            <h2 class="fw-bold">{{ stats.interview | default:"0" }}</h2>
+        <div class="card h-100 bg-dark text-white border-0 shadow-sm p-3 rounded-3" :class="dark ? 'text-black bg-white' : 'text-white bg-dark'">
+            <h5 class="fw-semibold mb-1" :class="dark ? 'text-black' : 'text-white'"><i class="bi bi-calendar-check"></i> Interviews Scheduled</h5>
+            <h2 class="fw-bold" :class="dark ? 'text-black' : 'text-white'">{{ stats.interview | default:"0" }}</h2>
         </div>
         </div>
         <div class="col">
-        <div class="card h-100 bg-dark text-white border-0 shadow-sm p-3 rounded-3">
-            <h5 class="fw-semibold mb-1"><i class="bi bi-trophy"></i> Offers Received</h5>
-            <h2 class="fw-bold">{{ stats.offer | default:"0" }}</h2>
+        <div class="card h-100 bg-dark text-white border-0 shadow-sm p-3 rounded-3" :class="dark ? 'text-black bg-white' : 'text-white bg-dark'">
+            <h5 class="fw-semibold mb-1" :class="dark ? 'text-black' : 'text-white'"><i class="bi bi-trophy"></i> Offers Received</h5>
+            <h2 class="fw-bold" :class="dark ? 'text-black' : 'text-white'">{{ stats.offer | default:"0" }}</h2>
         </div>
         </div>
     </div>
