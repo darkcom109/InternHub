@@ -9,7 +9,7 @@
         <div class="row align-items-center gy-3">
           <div class="col-lg-7">
             <h1 class="display-5 fw-semibold">All‑in‑One Internship Tracker</h1>
-            <p class="lead text-white">Track applications, deadlines, interviews, and notes in one tidy place.</p>
+            <p class="lead">Track applications, deadlines, interviews, and notes in one tidy place.</p>
             <div class="d-flex gap-2">
               <a class="btn" id="get-started" href="{% url 'signup' %}">Create free account</a>
               <a class="btn" id="demo" href="{% url 'login' %}">Login</a>
@@ -32,7 +32,7 @@
         <div class="row row-cols-1 row-cols-md-3 g-3">
 
             <div class="col">
-                <div class="card h-100 feature-card card-animation bg-dark text-white">
+                <div class="card h-100 feature-card card-animation" :class="dark ? 'bg-light text-dark' : 'bg-dark text-white'">
                     <div class="card-body d-flex flex-column align-items-center">
                         <i class="bi bi-kanban-fill icon-styling"></i>
                         <h3 class="h5 mb-2">Application Tracker</h3>
@@ -42,7 +42,7 @@
             </div>
 
             <div class="col">
-                <div class="card h-100 feature-card card-animation bg-dark text-white">
+                <div class="card h-100 feature-card card-animation" :class="dark ? 'bg-light text-dark' : 'bg-dark text-white'">
                     <div class="card-body d-flex flex-column align-items-center">
                         <i class="bi bi-alarm icon-styling"></i>
                         <h3 class="h5 mb-2">Smart Deadlines</h3>
@@ -52,7 +52,7 @@
             </div>
 
             <div class="col">
-                <div class="card h-100 feature-card card-animation bg-dark text-white">
+                <div class="card h-100 feature-card card-animation" :class="dark ? 'bg-light text-dark' : 'bg-dark text-white'">
                     <div class="card-body d-flex flex-column align-items-center">
                         <i class="bi bi-journal-text icon-styling"></i>
                         <h3 class="h5 mb-2">Interview Prep</h3>
@@ -96,7 +96,7 @@
     <!-- CTA -->
     <section class="bg-dark">
         <div class="container py-5 text-center bg-white cta-styling">
-            <h2 class="mb-2">Ready to get Started?</h2>
+            <h2 class="mb-2 text-black">Ready to get Started?</h2>
             <p class="text-secondary mb-4">Create your InternHub account in minutes.</p>
             <a class="btn btn-success btn-lg px-4" href="{% url 'signup' %}">
                 Make your account now
