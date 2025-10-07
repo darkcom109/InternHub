@@ -9,12 +9,21 @@ body {
 }
 .nav-button-style {
     text-decoration: none;
-    color: black;
+    color: 'black';
     padding: 6px 12px;
 }
 .nav-button-style:hover {
     color: white;
-    background-color: black;
+    background-color: #212529;
+}
+.nav-button-style-dark {
+    text-decoration: none;
+    color: white;
+    padding: 6px 12px;
+}
+.nav-button-style-dark:hover {
+    color: #212529;
+    background-color: white;
 }
 #get-started, #demo {
     color: white;
