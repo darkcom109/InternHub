@@ -25,7 +25,14 @@
         }
     </style>
   </head>
-  <body x-data="{ dark: false }" :class="dark ? 'bg-dark text-white' : 'bg-white text-dark'">
+  <body x-data="{
+      dark: localStorage.getItem('theme') === 'dark',
+      toggleTheme() {
+        this.dark = !this.dark;
+        localStorage.setItem('theme', this.dark ? 'dark' : 'light');
+      }
+    }"
+        :class="dark ? 'bg-dark text-white' : 'bg-white text-dark'">
     <!-- Navbar -->
     {% include 'components/navbar.html' %}
 
