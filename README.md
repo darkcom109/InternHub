@@ -15,7 +15,8 @@ It serves as a personal tracker — allowing users to add, view, and manage inte
 - 📚 **Application Tracker**  
   - Add internship applications with details like company name, position, status, and deadline  
   - View, update, or delete applications directly from your dashboard  
-  - See key statistics — total applications sent, interviews, and offers received  
+  - See key statistics — total applications sent, interviews, and offers received
+  - Light/Dark mode feature using Alpine.js
 
 ---
 
