@@ -36,3 +36,8 @@ InternHub provides students with a simple, intuitive dashboard to manage the ent
 It replaces messy spreadsheets and scattered notes with an organized digital solution powered by Django.
 
 ---
+
+```bash
+git clone https://github.com/darkcom109/InternHub.git
+cd internhub
+```
