@@ -37,7 +37,11 @@ It replaces messy spreadsheets and scattered notes with an organized digital sol
 
 ---
 
+## 📊 Installation
+
 ```bash
 git clone https://github.com/darkcom109/InternHub.git
 cd internhub
+pip install -r requirements.txt
+python manage.py runserver
 ```
