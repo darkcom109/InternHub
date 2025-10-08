@@ -23,13 +23,9 @@ It serves as a personal tracker — allowing users to add, view, and manage inte
 
 ## Screenshots (Early Frontend Prototype)
 
----
 <img width="959" height="448" alt="image" src="https://github.com/user-attachments/assets/1c89b3a7-849c-4e98-948d-5c1c4af0edac" />
----
 <img width="959" height="445" alt="image" src="https://github.com/user-attachments/assets/57abb364-4b31-4073-adce-f91daeefe278" />
----
 <img width="959" height="446" alt="image" src="https://github.com/user-attachments/assets/038f3852-ca98-4de8-b287-fd5f3a9263f4" />
----
 
 ## 🧰 Tech Stack  
 
