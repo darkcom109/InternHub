@@ -12,6 +12,8 @@ class Job(models.Model):
         ('offer', 'Offer Received'),
         ('rejected', 'Rejected'),
         ('saved', 'Saved / Draft'),
+        ('ghosted', 'Ghosted/Ignored'),
+        ('assessment', 'Assessment Required'),
     ]
     
     # Links to an actual user from the database

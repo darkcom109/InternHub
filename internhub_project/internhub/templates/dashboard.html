@@ -23,10 +23,18 @@
         background-color: #E5E7EB;
         color: #374151;
     }
-    .container-table-styling {
-        border: 1.5px solid #ccc;
-        border-radius: 10px;
-        overflow: hidden; /* hides the sharp table edges inside */
+    .ghosted-styling {
+        background-color: #E5E7EB;
+        color: #374151;
+    }
+    .ghosted-styling {
+        background-color: #F3F4F6;
+        color: #6B7280;
+        font-style: italic;
+    }
+    .assessment-styling {
+        background-color: #FFEDD5;
+        color: #9A3412;
     }
 </style>
 
@@ -98,6 +106,10 @@
                                 <td><span class="badge rejected-styling">{{ job.status | title }}</span></td>
                             {% elif job.status == "saved" %}
                                 <td><span class="badge saved-styling">{{ job.status | title }}</span></td>
+                            {% elif job.status == "ghosted" %}
+                                <td><span class="badge ghosted-styling">{{ job.status | title }}</span></td>
+                            {% elif job.status == "assessment" %}
+                                <td><span class="badge assessment-styling">{{ job.status | title }}</span></td>
                             {% endif %}
                             
                             <td>{{ job.deadline }}</td>
