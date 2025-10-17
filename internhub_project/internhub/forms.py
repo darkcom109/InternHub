@@ -24,7 +24,7 @@ class LoginForm(forms.Form):
 class JobForm(forms.ModelForm):
     class Meta:
         model = Job
-        fields = ['company', 'position', 'status', 'deadline']
+        fields = ['company', 'position', 'status', 'deadline', 'link_to_application']
         widgets = {
             'deadline': forms.DateInput(attrs={'type': 'date'}),
         }

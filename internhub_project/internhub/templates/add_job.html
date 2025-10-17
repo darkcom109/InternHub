@@ -3,7 +3,7 @@
 {% block content %}
 <div class="background-color-styling py-5">
   <div class="container d-flex justify-content-center align-items-center">
-    <div class="add-job-container-styling shadow-sm">
+    <div class="add-job-container-styling shadow-sm" :class="dark ? 'text-black' : 'text-black'">
       <h2 class="fw-semibold mb-4 text-center">Add a Job</h2>
       <form method="POST" class="add-job-form-styling">
         {% csrf_token %}
@@ -26,6 +26,11 @@
         <div class="mb-4">
           {{ form.deadline.label_tag }}
           {{ form.deadline }}
+        </div>
+
+        <div class="mb-4">
+          {{ form.link_to_application.label_tag }}
+          {{ form.link_to_application }}
         </div>
 
         <div class="text-center">

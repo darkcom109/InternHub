@@ -78,6 +78,7 @@
                         <th>Role</th>
                         <th>Status</th>
                         <th>Deadline</th>
+                        <th>Link</th>
                         <th>Actions</th>
                         </tr>
                     </thead>
@@ -100,6 +101,7 @@
                             {% endif %}
                             
                             <td>{{ job.deadline }}</td>
+                            <td>{{ job.link_to_application }}</td>
                             <td>
                                 <form action="{% url 'edit_job' job.id %}" style="display:inline;">
                                     {% csrf_token %}
