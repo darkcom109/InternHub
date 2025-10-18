@@ -11,7 +11,7 @@
 </p>
 
 **InternHub** is a web application built to help students organize and manage their internship applications efficiently.  
-It serves as a personal tracker — allowing users to add, view, and manage internship opportunities in one place. 
+It serves as a personal tracker — allowing users to add, view, and manage internship opportunities in one place.
 
 ---
 
