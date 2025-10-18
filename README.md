@@ -20,7 +20,7 @@ It serves as a personal tracker — allowing users to add, view, and manage inte
 - 🔑 **User Authentication**  
   - Secure sign-up, log-in, and log-out functionality  
   - Passwords are hashed using Django’s built-in authentication system  
-  - Session management handled through Django sessions  
+  - Session management handled through Django sessions 
 
 - 📚 **Application Tracker**  
   - Add internship applications with details like company name, position, status, and deadline  
