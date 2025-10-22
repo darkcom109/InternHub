@@ -30,3 +30,5 @@ urlpatterns = [
     path('edit-job/<int:job_id>', views.edit_job, name="edit_job"),
     path('internships/', views.internships, name="internships"),
 ]
+
+handler404 = 'internhub.views.custom_404_view'

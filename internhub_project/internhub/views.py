@@ -155,3 +155,6 @@ def delete_job(request, job_id):
 def internships(request):
     internships = Internship.objects.all()
     return render(request, 'internships.html', {'internships': internships})
+
+def custom_404_view(request, exception):
+    return render(request, '404.html', status=404)

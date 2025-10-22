@@ -113,7 +113,11 @@
                             {% endif %}
                             
                             <td>{{ job.deadline }}</td>
-                            <td>{{ job.link_to_application }}</td>
+                            {% if job.link_to_application != "None" %}
+                                <td><a href="{{ job.link_to_application }}" target="_blank" class="text-decoration-none">Link to Application</a></td>
+                            {% else %}
+                                <td>No Link Applied</td>
+                            {% endif %}
                             <td>
                                 <form action="{% url 'edit_job' job.id %}" style="display:inline;">
                                     {% csrf_token %}
