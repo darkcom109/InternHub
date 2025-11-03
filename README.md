@@ -40,9 +40,10 @@ It serves as a personal tracker — allowing users to add, view, and manage inte
 
 ## 🧰 Tech Stack  
 
-- **Backend:** Django (Python)  
+- **Languages** Python, JavaScript, HTML, CSS
+- **Backend:** Django, Google Custom Search API  
 - **Database:** PostgreSQL  
-- **Frontend:** Django Templating Language (DTL), Bootstrap 5, Alpine.js, Google Custom Search API
+- **Frontend:** Django Templating Language (DTL), Bootstrap 5, Alpine.js
 - **Authentication:** Django Auth System  
 
 ---
