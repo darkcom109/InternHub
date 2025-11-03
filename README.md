@@ -8,6 +8,7 @@
   <img src="https://img.shields.io/badge/-Alpine.js-8BC0D0?style=for-the-badge&logo=alpinedotjs&logoColor=white" />
   <img src="https://img.shields.io/badge/-HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
   <img src="https://img.shields.io/badge/-CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/-Google%20Custom%20Search%20API-4285F4?style=for-the-badge&logo=google&logoColor=white" />
 </p>
 
 **InternHub** is a web application built to help students organise and manage their internship applications efficiently.  
@@ -39,9 +40,10 @@ It serves as a personal tracker — allowing users to add, view, and manage inte
 
 ## 🧰 Tech Stack  
 
-- **Backend:** Django (Python)  
+- **Languages** Python, JavaScript, HTML, CSS
+- **Backend:** Django, Google Custom Search API  
 - **Database:** PostgreSQL  
-- **Frontend:** Django Templating Language (DTL), Bootstrap 5, Alpine.js  
+- **Frontend:** Django Templating Language (DTL), Bootstrap 5, Alpine.js
 - **Authentication:** Django Auth System  
 
 ---
