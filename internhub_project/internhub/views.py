@@ -145,7 +145,7 @@ def edit_job(request, job_id):
 
     return render(request, 'edit_job.html', {'form': form, 'job': job})
 
-# The delete_job is responsible for deleting posts
+# The delete_job view is responsible for deleting posts
 # If a user deletes a post, the job_id is passed into the view
 # This post is then found in the database and deleted using .delete()
 @login_required
@@ -157,6 +157,9 @@ def delete_job(request, job_id):
     
     return redirect('dashboard')
 
+# The internships view is responsible for obtaining the search results for internships
+# FUTURE IMPLEMENTATION REQUIRED - need to create an algorithm for obtaining data each day
+# and storing it in my database
 @login_required
 def internships(request):
 
@@ -172,8 +175,6 @@ def internships(request):
     internships = []
 
     # title, link, snippet, displayLink categories
-
-    internships = []
 
     for item in data.get("items", []):
         internships.append({
