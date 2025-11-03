@@ -42,7 +42,7 @@ It serves as a personal tracker — allowing users to add, view, and manage inte
 
 - **Backend:** Django (Python)  
 - **Database:** PostgreSQL  
-- **Frontend:** Django Templating Language (DTL), Bootstrap 5, Alpine.js  
+- **Frontend:** Django Templating Language (DTL), Bootstrap 5, Alpine.js, Google Custom Search API
 - **Authentication:** Django Auth System  
 
 ---
