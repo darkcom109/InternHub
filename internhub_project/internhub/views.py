@@ -6,6 +6,12 @@ from .forms import SignupForm, LoginForm, JobForm
 from .models import Job, Internship
 from django.contrib.auth.models import User
 
+import requests
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # Create your views here.
 # Every view requires a request object for processing
 # Django chooses to be explicit with their request object parameter in each view
@@ -153,7 +159,29 @@ def delete_job(request, job_id):
 
 @login_required
 def internships(request):
-    internships = Internship.objects.all()
+
+    API_KEY = os.getenv("GOOGLE_CUSTOM_SEARCH_API_KEY")
+    CX = os.getenv("SEARCH_ENGINE_API_KEY")
+    
+    url = "https://www.googleapis.com/customsearch/v1"
+    params = {"key": API_KEY, "cx": CX, "q": "software engineering internships", "num": 10}
+
+    response = requests.get(url, params=params)
+    data = response.json()
+
+    internships = []
+
+    # title, link, snippet, displayLink categories
+
+    internships = []
+
+    for item in data.get("items", []):
+        internships.append({
+            "title": item.get("title"),
+            "link": item.get("link"),
+            "displayLink": item.get("displayLink")
+        })
+
     return render(request, 'internships.html', {'internships': internships})
 
 def custom_404_view(request, exception):
