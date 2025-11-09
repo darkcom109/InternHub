@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/-PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
   <img src="https://img.shields.io/badge/-Bootstrap_5-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" /> 
   <img src="https://img.shields.io/badge/-Alpine.js-8BC0D0?style=for-the-badge&logo=alpinedotjs&logoColor=white" /> 
-  <img src="https://img.shields.io/badge/-HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" /> 
+  <img src="https://img.shields.io/badge/-HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
   <img src="https://img.shields.io/badge/-CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
   <img src="https://img.shields.io/badge/-Google%20Custom%20Search%20API-4285F4?style=for-the-badge&logo=google&logoColor=white" />
 </p>
